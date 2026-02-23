@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Ethiopic:wght@300;400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans Ethiopic", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Libre Baskerville", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-amharic: "Noto Sans Ethiopic", sans-serif;
+
+  --color-cadaster-blue: #0A192F;
+  --color-cadaster-gold: #C5A059;
+  --color-cadaster-slate: #F8F9FA;
+  
+  --color-primary-blue: #1e3a8a;
+  --color-secondary-gold: #eab308;
+}
+
+@layer base {
+  :root {
+    --primary-blue: #1e3a8a;
+    --secondary-gold: #eab308;
+    --text-dark: #1f2937;
+    --light-bg: #f3f4f6;
+  }
+
+  body {
+    @apply bg-cadaster-slate antialiased;
+    font-family: 'Noto Sans Ethiopic', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+}
+
+.glass-panel {
+  @apply bg-white/80 backdrop-blur-md border border-slate-200 shadow-sm;
+}
+
+.official-border {
+  @apply border-l-4 border-cadaster-blue pl-4;
+}
+
+/* Header & Navigation */
+.nav-link {
+    @apply transition-colors duration-300 relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--secondary-gold);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* About Section Specifics */
+.about-card {
+    @apply bg-white p-8 rounded-2xl shadow-sm transition-transform duration-300;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-blue);
+    @apply text-white px-6 py-3 rounded-lg transition-all duration-300;
+}
+
+.btn-primary:hover {
+    background-color: #172554;
+    box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.3);
+}
+
+/* Responsive Grid */
+.grid-container {
+    @apply grid gap-8;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+

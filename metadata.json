@@ -1,0 +1,5 @@
+{
+  "name": "Samara Logia City Cadaster Office",
+  "description": "Official portal for land records, property registration, and urban planning in Samara Logia.",
+  "requestFramePermissions": ["geolocation"]
+}
